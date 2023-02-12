@@ -1,0 +1,57 @@
+//- Sirve para sobreescribir las variables
+//- al meter include dentro de un bloque lo podemos sobreescribir
+block ../includes/config
+    include ../includes/config
+//- Fin descripción
+//- Al añadir en template base a mixing, ya puedo contear con los mixins en todas las páginas
+include ../includes/mixins
+
+doctype html
+html(lang="es")
+    head
+        meta(charset='utf-8')
+        // Añade el título dinámicamente
+        title= `${nombreSitio} | ${descripcionSitio}`
+        meta(name="description", content= metaDescription)
+        meta(name="description", content= keyWords)
+        meta(name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover")
+        link(rel="apple-touch-icon" sizes="180x180" href= previoLocalHost + '/lib/img/03_base/favicon/'+`${faviconSeccion}`+'/apple-touch-icon.png')
+        link(rel="icon" type="image/png" sizes="32x32" href= previoLocalHost + '/lib/img/03_base/favicon/'+`${faviconSeccion}`+'/favicon-32x32.png')
+        link(rel="icon" type="image/png" sizes="16x16" href= previoLocalHost + '/lib/img/03_base/favicon/'+`${faviconSeccion}`+'/favicon-16x16.png')
+        link(rel="shortcut icon" type="image/x-icon" href= previoLocalHost + '/lib/img/03_base/favicon/'+`${faviconSeccion}`+'/favicon.ico')
+        //link(rel="manifest" href=previoLocalHost + "/lib/img/favicon/site.webmanifest")
+        meta(name="msapplication-TileColor" content="#da532c")
+        meta(name="theme-color" content="#ffffff")
+
+        // Estilos de la master
+        link(rel='stylesheet' type='text/css' href= previoLocalHost + '/lib/css/styles.css')
+        link(rel='stylesheet' type='text/css' href= previoLocalHost + '/lib/css/normalize.css')
+        // Estilos de los recursos adicionales
+        block styles
+
+    body(class= `${paginaActual.toLowerCase().split(' ').join('-')}`)
+        |
+        |
+
+        // ********** Cabecera **********
+        include ../includes/componentes/bloques/genericos/cabecera
+        // ********** Fin Cabecera **********
+        |
+        |
+
+        // ********** Contenido Central **********
+        block contenido
+        // ********** Fin Contenido Central **********
+        |
+        |
+
+        // ********** Footer **********
+        include ../includes/componentes/bloques/genericos/footer
+        // ********** Fin Footer **********
+        |
+        |
+
+        // ********** scripts **********
+        block scripts
+
+

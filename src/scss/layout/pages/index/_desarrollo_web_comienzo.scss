@@ -1,0 +1,201 @@
+.bloque_desarrollo_web_comienzo {
+  background-color: $gris-fondo-escritorio;
+  background-image: url("../img/01_paginas/index/cabecera-inicial/escritorio.png");
+  background-attachment: inherit;
+  background-position: center bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+
+  /* border-bottom-left-radius: 100% 10%;
+   border-bottom-right-radius: 100% 10%;
+   background-color: rgba(94, 94, 94, 0.4);
+   background-blend-mode: multiply;*/
+
+
+  .contenedor-principal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 100vh;
+
+    /* ----------- Iphone X ----------- */
+
+    @media only screen
+    and (min-device-width: 375px)
+    and (max-device-width: 812px)
+    and (-webkit-min-device-pixel-ratio: 3)
+    and (orientation: landscape) {
+      align-items: center;
+      min-height: 120vh;
+      padding-bottom: 4rem;
+
+    }
+
+
+    /* ----------- TEXTO CENTRAL ----------- */
+
+
+    .textos-central {
+      color: $negro;
+
+
+      /* ----------- Iphone X ----------- */
+
+      @media only screen
+      and (min-device-width: 375px)
+      and (max-device-width: 812px)
+      and (-webkit-min-device-pixel-ratio: 3)
+      and (orientation: portrait) {
+        margin-bottom: 12rem;
+      }
+
+      /* ----------- iPhone 6+, 7+ and 8+ ----------- */
+      @media only screen
+      and (min-device-width: 414px)
+      and (max-device-width: 736px)
+      and (-webkit-min-device-pixel-ratio: 3)
+      and (orientation: portrait) {
+        margin-bottom: 8rem;
+      }
+
+      @include media-querie-tablet{
+        margin-bottom: 25rem;
+      }
+
+      @include media-querie-desktop{
+        margin-bottom: 20rem;
+      }
+
+
+      /* ----------- iPad 1, 2, Mini and Air ----------- */
+
+      @media only screen
+      and (min-device-width: 768px)
+      and (max-device-width: 1024px)
+      and (orientation: landscape)
+      and (-webkit-min-device-pixel-ratio: 1) {
+        margin-bottom: 15rem;
+      }
+
+      @media screen and (max-width: 850px){
+        @include media-querie-oriention-lanscape{
+          margin-bottom: 0;
+          margin-top: 3rem;
+        }
+      }
+
+      h1.titulo-web {
+        font-size: 2.7rem;
+        font-family: $fuente_principal_bold;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+
+        /* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
+
+        @media only screen
+        and (min-device-width: 320px)
+        and (max-device-width: 568px)
+        and (-webkit-min-device-pixel-ratio: 2) {
+          font-size: 2rem;
+        }
+
+        /* ----------- iPad Pro 12.9" ----------- */
+
+        @media only screen
+        and (min-device-width: 1024px)
+        and (max-device-width: 1024px)
+        and (orientation: portrait)
+        and (-webkit-min-device-pixel-ratio: 2) {
+          font-size: 3rem;
+        }
+
+        @include media-querie-desktop{
+          font-size: 4rem;
+        }
+      }
+
+
+
+      .subtitulo-web {
+        font-size: var(--h1-font-size);
+        font-family: Swenson, sans-serif;
+
+        /* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
+
+        @media only screen
+        and (min-device-width: 320px)
+        and (max-device-width: 568px)
+        and (-webkit-min-device-pixel-ratio: 2) {
+          font-size: 1.4rem;
+        }
+
+        /* ----------- iPad Pro 12.9" ----------- */
+
+        @media only screen
+        and (min-device-width: 1024px)
+        and (max-device-width: 1024px)
+        and (orientation: portrait)
+        and (-webkit-min-device-pixel-ratio: 2) {
+          font-size: 2rem;
+        }
+
+        /* ----------- Desktop ----------- */
+
+        @include media-querie-desktop{
+          margin-bottom: 3rem;
+        }
+      }
+
+
+      .descripcion {
+
+        /* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
+
+        @media only screen
+        and (min-device-width: 320px)
+        and (max-device-width: 568px)
+        and (-webkit-min-device-pixel-ratio: 2) {
+          font-size: .9rem;
+        }
+
+        /* ----------- Iphone X ----------- */
+
+        /* ----------- Iphone X ----------- */
+
+        @media only screen
+        and (min-device-width: 375px)
+        and (max-device-width: 812px)
+        and (-webkit-min-device-pixel-ratio: 3)
+        and (orientation: portrait) {
+          font-size: 1rem
+        }
+
+        @include media-querie-tablet{
+          width: 80%;
+          margin: 0 auto;
+        }
+
+        /* ----------- iPad Pro 12.9" ----------- */
+
+        @media only screen
+        and (min-device-width: 1024px)
+        and (max-device-width: 1024px)
+        and (orientation: portrait)
+        and (-webkit-min-device-pixel-ratio: 2) {
+          font-size: 1.2rem;
+        }
+
+        @include media-querie-desktop{
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+

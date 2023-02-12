@@ -1,0 +1,766 @@
+/*--- Animación menú hamburguesa ---*/
+
+@keyframes giraIzquierda {
+  from {
+    transform: rotate(0deg)
+  }
+  to {
+    transform: rotate(180deg)
+  }
+
+}
+
+@keyframes giraDerecha {
+  from {
+    transform: rotate(180deg)
+  }
+  to {
+    transform: rotate(0deg)
+  }
+}
+
+/*--- Fin animación menú hamburguesa ---*/
+
+.cabecera {
+  line-height: initial;
+  position: fixed;
+  width: 100%;
+  padding: .8rem 1.21rem;
+  transition: all .3s;
+  z-index: 2;
+  background-color: white;
+  //box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid $gris-borde;
+
+
+  @include media-querie-desktop {
+    //background-color: transparent;
+    box-shadow:initial;
+  }
+
+
+  &.cabeceraEncoge {
+    padding: .2rem 1.21rem;
+    transition: all .3s;
+    background-color: white;
+  }
+
+
+  .contenedor-principal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+
+
+    @include media-querie-desktop() {
+      order: 1;
+      max-width: calc(100vw - 5%);
+    }
+
+    @include media-querie-desktop-f() {
+      max-width: calc(100vw - 20%);
+    }
+
+
+    &.contenedorPrincipalEncoge {
+
+
+      @include media-querie-desktop() {
+        max-width: calc(100vw - 5%);
+        transition: all .2s;
+      }
+
+      @include media-querie-desktop-f() {
+        max-width: calc(100vw - 20%);
+        transition: all .2s;
+      }
+    }
+
+
+    a.link-logo {
+      text-decoration: none;
+      flex: 0 0 auto;
+      order: 2;
+
+      @include media-querie-desktop() {
+        order: 1;
+      }
+
+
+      .logo {
+
+        img {
+          height: 30px;
+          transition: all .2s;
+
+          @include media-querie-mobile-small{
+            height: 40px;
+          }
+
+          @include media-querie-desktop-k{
+            height: 80px;
+          }
+
+          &.logoEncoge {
+            height: 25px;
+            margin: .5rem 0;
+            transition: all .2s;
+
+            @include media-querie-mobile-small{
+              height: 35px;
+            }
+
+            @include media-querie-desktop-k{
+              height: 70px;
+            }
+
+          }
+
+        }
+      }
+    }
+
+    .menu-cabecera {
+      flex: 0 1 auto;
+      order: 1;
+
+      .botones {
+
+        @include media-querie-desktop() {
+          display: none;
+        }
+
+        .menu-hamburguesa {
+          font-size: 1.7rem;
+          color: $negro;
+
+
+          .fa-bars {
+            animation: giraIzquierda .5s;
+          }
+        }
+
+        .cerrar-menu-hamburguesa {
+          font-size: 2.31rem;
+          color: $negro;
+
+          .fa-times {
+            display: none;
+            animation: giraDerecha .5s;
+          }
+        }
+      }
+
+      .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: -100%;
+        //padding: 1.5rem 1rem;
+        padding: 0 0 1.5rem 1rem;
+        width: 90%;
+        height: 100vh;
+        transition: all .5s;
+        font-size: 1rem;
+        /*transparent para cabecera transparente*/
+        background-color: white;
+
+
+        @include media-querie-tablet() {
+          width: 50%;
+        }
+
+        @include media-querie-desktop() {
+          position: static;
+          height: initial;
+          width: initial;
+          padding: 0;
+          color: transparent;
+        }
+
+        .navMenuEncoge {
+          background-color: white;
+        }
+
+        ul {
+          padding: 0;
+          margin: 0;
+
+        }
+
+        // Para hacer que los elementos ul del primer nivel solo cojan el ancho necesario
+        > ul {
+
+          @include media-querie-desktop() {
+            display: table;
+            width: 100%;
+          }
+
+          //float para colocarlos horizontalmente y que solo haga efecto al primer li
+          > li {
+
+            @include media-querie-desktop() {
+              float: left;
+            }
+          }
+
+          li {
+            position: relative;
+            border-top: 1px solid $gris-borde;
+            list-style: none;
+            line-height: 2.5rem;
+
+            @include media-querie-desktop {
+              // Hace que salga el segundo nivel
+              // Solo se habre mediante hover en modo escritorio. En móvil se hará mediante click con javascript
+              &:hover ul {
+                position: absolute;
+                opacity: 1;
+                overflow: visible;
+                max-height: 2000px;
+                background: white;
+                top: 130%;
+                margin-bottom: 1rem;
+
+                &.submenuEncoge {
+                  top: 122%;
+                }
+              }
+
+              // Transicion del icono flechita
+              &:hover i {
+                transform: rotate(180deg);
+                transition: transform .3s;
+              }
+            }
+
+
+            &:last-of-type {
+              border-bottom: 1px solid $gris-borde;
+
+              @include media-querie-desktop() {
+                border: none;
+              }
+            }
+
+            @include media-querie-desktop() {
+              border: none;
+              padding: 0 .2rem;
+            }
+
+            // Span es para que no suba hacia arriba el link cuando se pulse
+            span {
+              display: flex;
+              align-items: center;
+              color: $negro;
+              transition: color .5s;
+              padding: 0 0.5rem;
+
+              @include media-querie-desktop() {
+                padding: 0 1rem;
+              }
+
+              &:hover {
+                color: $color-logo-2;
+                transition: color .2s;
+                cursor: pointer;
+              }
+
+              .espacio-icono {
+                width: 35px;
+
+                @include media-querie-desktop() {
+                  display: none;
+                }
+              }
+
+              > i {
+                margin-left: auto;
+                margin-right: 1rem;
+                transition: transform .3s; // Retroceso transicion del icono flechita
+                transition-delay: .2s, 4ms;
+
+                @include media-querie-desktop() {
+                  display: inline-block;
+                  margin-left: .8rem;
+                  margin-right: 0;
+                  font-size: .7rem;
+                }
+              }
+            }
+
+            a {
+              display: flex;
+              align-items: center;
+              color: $negro;
+              padding: 0 .5rem;
+              text-decoration: none;
+              transition: color .5s;
+
+
+              @include media-querie-desktop() {
+                padding: 0 1rem;
+              }
+
+              &:hover {
+                color: $color-logo-2;
+                transition: color .2s;
+              }
+
+
+              .espacio-icono {
+                width: 35px;
+                text-align: center;
+
+                @include media-querie-desktop() {
+                  display: none;
+                }
+
+                > i {
+                  margin-left: auto;
+                  margin-right: 1rem;
+                  transition: transform .3s; // Retroceso transicion del icono flechita
+                  transition-delay: .2s, 4ms;
+
+                  @include media-querie-desktop() {
+                    display: inline-block;
+                    margin-left: .5rem;
+                    font-size: .8rem;
+                  }
+                }
+              }
+            }
+          }
+
+          // SEGUNDO NIVEL
+
+          ul.submenu-segundo-nivel {
+            position: relative;
+            max-height: 0;
+            overflow: hidden;
+            width: 100%;
+            opacity: 1;
+            background: white;
+            transition: all .3s;
+
+
+            @include media-querie-desktop {
+              position: absolute;
+              box-shadow: 0 10px 13px 1px rgba(0, 0, 0, 0.1);
+              top: 130%;
+              border-radius: 0 0 5px 5px;
+            }
+
+            &.submenuEncoge {
+              top: 122%;
+            }
+
+
+            @include media-querie-desktop {
+              width: 230px;
+            }
+
+            @include media-querie-desktop-k {
+              width: 11vw;
+            }
+
+            li {
+              border: 0;
+              padding-left: 2.5rem;
+
+
+              &:first-of-type {
+                border-top: 1px solid $gris-borde;
+                padding-top: .3rem;
+              }
+
+              &:last-of-type {
+                padding-bottom: .3rem;
+              }
+
+              @include media-querie-desktop {
+
+                line-height: 3rem;
+                border-bottom: 1px solid $gris-borde;
+                padding-left: .3rem;
+
+                &:first-of-type {
+                  border-top: 0;
+                }
+
+                &:last-of-type {
+                  padding-bottom: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .hablamos {
+      flex: 0 1 auto;
+      order: 3;
+      font-size: 2rem;
+      color: $color-logo-2;
+
+
+      @include media-querie-desktop-f() {
+        margin-right: 6rem;
+      }
+
+      &.hablamosEncoge {
+
+
+        @include media-querie-desktop-f() {
+          margin-right: 4rem;
+          transition: all .3s;
+        }
+      }
+
+
+      a#linkHablamos {
+        display: none;
+
+        @include media-querie-desktop() {
+          display: block;
+          font-size: 1rem;
+          padding: .5rem 1rem;
+          border-radius: 5px;
+          border: 1px solid $color-logo-2;
+          color: $color-logo-2;
+          text-decoration: none;
+          width: auto;
+          text-align: center;
+          transition: all .3s;
+
+          &:hover {
+            background-color: $color-logo-2;
+            color: white;
+          }
+
+          @include media-querie-desktop-k() {
+            border-radius: 15px;
+          }
+
+          &.linkHablamosEncoge {
+            padding: .5rem 1rem;
+            transition: all .3s;
+          }
+        }
+      }
+
+      a#enlace-icono-hablamos {
+
+        i {
+          color: $color-logo-2;
+          cursor: pointer;
+
+          @include media-querie-desktop() {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.cabecera.no-menu {
+
+  .nav-menu {
+    left: 0 !important;
+  }
+}
+
+
+// APARTADO WEB
+
+.disenio-web,
+.web-empresa,
+.tiendas-online,
+.disenio-medida{
+
+
+  #id-nav-menu {
+
+    span {
+
+      &:hover {
+        color: $color-primario-seccion-web;
+      }
+    }
+
+    a {
+
+      &:hover {
+        color: $color-primario-seccion-web;
+      }
+    }
+  }
+
+  #hablamos {
+
+    a#linkHablamos {
+
+      @include media-querie-desktop() {
+        padding: .5rem 1rem !important;
+        border: 1px solid $color-primario-seccion-web;
+        color: $color-primario-seccion-web;
+
+        &:hover {
+          background-color: $color-primario-seccion-web;
+          color: white;
+        }
+      }
+    }
+    a#enlace-icono-hablamos{
+
+      i#iconoHablamos{
+        color: $color-primario-seccion-web;
+      }
+    }
+  }
+}
+
+// MANTENIMIENTO
+
+
+.mantenimiento{
+
+
+  #id-nav-menu {
+
+    span {
+
+      &:hover {
+        color: $color-primario-seccion-mantenimiento;
+      }
+    }
+
+    a {
+
+      &:hover {
+        color: $color-primario-seccion-mantenimiento;
+      }
+    }
+  }
+
+  #hablamos {
+
+    a#linkHablamos {
+
+      @include media-querie-desktop() {
+        padding: .5rem 1rem !important;
+        border: 1px solid $color-primario-seccion-mantenimiento;
+        color: $color-primario-seccion-mantenimiento;
+
+        &:hover {
+          background-color: $color-primario-seccion-mantenimiento;
+          color: white;
+        }
+      }
+    }
+    a#enlace-icono-hablamos{
+
+      i#iconoHablamos{
+        color: $color-primario-seccion-mantenimiento;
+      }
+    }
+  }
+}
+
+
+// CONTACTO
+
+
+.contacto{
+
+
+  #id-nav-menu {
+
+    span {
+
+      &:hover {
+        color: $color-primario-seccion-contacto;
+      }
+    }
+
+    a {
+
+      &:hover {
+        color: $color-primario-seccion-contacto;
+      }
+    }
+  }
+
+  #hablamos {
+
+    a#linkHablamos {
+
+      @include media-querie-desktop() {
+        padding: .5rem 1rem !important;
+        border: 1px solid $color-primario-seccion-contacto;
+        color: $color-primario-seccion-contacto;
+
+        &:hover {
+          background-color: $color-primario-seccion-contacto;
+          color: white;
+        }
+      }
+    }
+    a#enlace-icono-hablamos{
+
+      i#iconoHablamos{
+        color: $color-primario-seccion-contacto;
+      }
+    }
+  }
+}
+
+
+
+// MARKETING
+
+
+.posicionamiento-seo,
+.trafficker-digital,
+.produccion-audiovisual,
+.fotografia-producto{
+
+
+  #id-nav-menu {
+
+    span {
+
+      &:hover {
+        color: $color-primario-seccion-marketing;
+      }
+    }
+
+    a {
+
+      &:hover {
+        color: $color-primario-seccion-marketing;
+      }
+    }
+  }
+
+  #hablamos {
+
+    a#linkHablamos {
+
+      @include media-querie-desktop() {
+        padding: .5rem 1rem !important;
+        border: 1px solid $color-primario-seccion-marketing;
+        color: $color-primario-seccion-marketing;
+
+        &:hover {
+          background-color: $color-primario-seccion-marketing;
+          color: white;
+        }
+      }
+    }
+    a#enlace-icono-hablamos{
+
+      i#iconoHablamos{
+        color: $color-primario-seccion-marketing;
+      }
+    }
+  }
+}
+
+
+// ERROR 404
+
+.error-404{
+
+
+  #id-nav-menu {
+
+    span {
+
+      &:hover {
+        color: $color-primario-seccion-404;
+      }
+    }
+
+    a {
+
+      &:hover {
+        color: $color-primario-seccion-404;
+      }
+    }
+  }
+
+  #hablamos {
+
+    a#linkHablamos {
+
+      @include media-querie-desktop() {
+        padding: .5rem 1rem !important;
+        border: 1px solid $color-primario-seccion-404;
+        color: $color-primario-seccion-404;
+
+        &:hover {
+          background-color: $color-primario-seccion-404;
+          color: white;
+        }
+      }
+    }
+    a#enlace-icono-hablamos{
+
+      i#iconoHablamos{
+        color: $color-primario-seccion-404;
+      }
+    }
+  }
+}
+
+
+// BLOG
+
+.blog{
+
+
+  #id-nav-menu {
+
+    span {
+
+      &:hover {
+        color: $color-primario-seccion-blog;
+      }
+    }
+
+    a {
+
+      &:hover {
+        color: $color-primario-seccion-blog;
+      }
+    }
+  }
+
+  #hablamos {
+
+    a#linkHablamos {
+
+      @include media-querie-desktop() {
+        padding: .5rem 1rem !important;
+        border: 1px solid $color-primario-seccion-blog;
+        color: $color-primario-seccion-blog;
+
+        &:hover {
+          background-color: $color-primario-seccion-blog;
+          color: white;
+        }
+      }
+    }
+    a#enlace-icono-hablamos{
+
+      i#iconoHablamos{
+        color: $color-primario-seccion-blog;
+      }
+    }
+  }
+}

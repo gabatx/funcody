@@ -1,0 +1,35 @@
+extends  ../templates/template
+//- append para ir al final y sobreescribimos lo que deseemos
+append ../includes/config
+    //- Título de la página
+    - tituloPagina = 'Bienvenido'
+    //- Para añadir una clase al elemento que queramos en el template
+    - paginaActual = 'Inicio'
+
+append styles
+    link(rel='stylesheet' type='text/css' href='lib/bootstrap/css/bootstrap.min.css')
+    link(rel='stylesheet' type='text/css' href='lib/css/font-awesome/css/all.min.css')
+    
+    
+block contenido
+    main.contenedor-principal
+        |
+        |
+        +botonSinParametros
+        |
+        |
+        +botonParametros('https://ed.Team', 'Ir a EDTeam')
+        |
+        |
+        +ejemploCard('1.jpg', 'leon', 'Leon en la selva', 'Nos encontramos en la selva de Kenia observando al gran León')
+        |
+        |
+        +ejemploCard('2.jpg', 'leon', 'Leon en la selva', 'Nos encontramos en la selva de Kenia observando al gran León')
+            block card
+                p Añadir más etiquetas
+            
+
+
+block scripts
+    script(type='text/javascript' src='lib/js/jquery/jquery-3.5.1.min.js')
+    script(type='text/javascript' src='lib/bootstrap/js/bootstrap.js')

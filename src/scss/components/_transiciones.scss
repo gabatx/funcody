@@ -1,0 +1,125 @@
+// ------------ Transición Ondas -------------- //
+
+@mixin transicion-ondas ($color){
+
+  .transicion-ondas {
+
+    position: relative;
+
+    #svg-transicion-ondas{
+      background-color:  $gris-claro-intermedio;
+      position:absolute;
+      top: -1px;
+      height:auto;
+      width: 100%;
+
+      path{
+        fill:$color;
+      }
+    }
+  }
+}
+
+@include transicion-ondas ($gris-fondo-escritorio);
+
+
+@mixin transicion-ondas-hacia-arriba ($color) {
+
+  .transicion-ondas-hacia-arriba {
+    position: relative;
+    transform: rotate(180deg);
+
+    #svg-transicion-ondas-hacia-arriba {
+      position: absolute;
+      top: -1px;
+      height: auto;
+      width: 100%;
+
+      path {
+        fill: $color;
+      }
+    }
+  }
+}
+
+@include transicion-ondas-hacia-arriba ($gris-fondo-escritorio);
+
+
+// ---------- COLOR 2
+
+@mixin transicion-ondas-color2 ($color){
+
+  .transicion-ondas-color2 {
+    position: relative;
+
+    #svg-transicion-ondas-color2{
+      position:absolute;
+      top: -1px;
+      height:auto;
+      width: 100%;
+
+      path{
+        fill:$color;
+      }
+    }
+  }
+}
+
+@include transicion-ondas-color2 ($gris-claro-intermedio);
+
+
+@mixin transicion-ondas-color2-hacia-arriba ($color) {
+
+  .transicion-ondas-color2-hacia-arriba {
+    position: relative;
+    transform: rotate(180deg);
+
+    #svg-transicion-ondas-color2-hacia-arriba {
+      position: absolute;
+      top: -1px;
+      height: auto;
+      width: 100%;
+
+      path {
+        fill: $color;
+      }
+    }
+  }
+}
+
+@include transicion-ondas-color2-hacia-arriba ($gris-claro-intermedio);
+
+// ---------- transición COLOR 3
+
+@mixin transicion-ondas-color3 ($color) {
+
+  .transicion-ondas-color3 {
+    position: relative;
+
+
+    #svg-transicion-ondas-color3 {
+      position: absolute;
+      top: -1px;
+      height: auto;
+      width: 100%;
+
+      path {
+        fill: $color;
+      }
+    }
+  }
+}
+
+@include transicion-ondas-color3 ($gris-claro-transicion-cabecera-paginas);
+
+// ------------ Lineas -------------- //
+
+.transicion-linea-discontinua{
+  height: 1px;
+  width: 50%;
+  margin: 0 auto;
+  border: 1px $gris-fondo-escritorio solid;
+  border-radius: 1px;
+}
+
+

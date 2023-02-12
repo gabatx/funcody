@@ -1,0 +1,15 @@
+mixin botonSinParametros
+    a(href="#") Soy un boton
+
+//- botón con parámetros
+mixin botonParametros(url,texto)
+    a(href= url).link-boton= texto
+
+
+mixin ejemploCard(imagen,alt_imagen,titulo,descripcion)
+    article.card
+        .card__image
+            img(src=`lib/img/${imagen}` alt=alt_imagen)
+        h2.card__title=titulo
+        p.card__body= descripcion
+        block card

@@ -1,0 +1,87 @@
+header.cabecera#cabecera
+    section.contenedor-principal#contenedorPrincipal
+        a.link-logo(href= previoLocalHost + "/index.html")
+           .logo
+                |
+                |
+                img#logo(src= previoLocalHost + '/lib/img/03_base/logo/'+`${cabeceraSeccion}`+'/logo.png')
+
+
+        article.menu-cabecera
+            section.botones
+
+                div.menu-hamburguesa
+                    i.far.fa-bars
+                div.cerrar-menu-hamburguesa
+                    i.fal.fa-times
+
+            nav.nav-menu#id-nav-menu
+                ul.menu-primer-nivel
+                    li#web
+                        //- Hace que no suba hacia arriba al pulsarlo
+                        span
+                            div.espacio-icono
+                                i.fal.fa-laptop-code
+                            | Web
+                            i.far.fa-chevron-down#flechitaWeb
+
+                        ul.submenu-segundo-nivel#submenu-segundo-nivel-web
+                            li
+                                a(href= previoLocalHost + '/pages/web/disenio-web.html')
+                                    | Diseño web
+                            li
+                                a(href=previoLocalHost + '/pages/web/web-empresa.html')
+                                    | Web empresa
+                            li
+                                a(href=previoLocalHost + '/pages/web/tiendas-online.html')
+                                    | Tiendas online
+                            li
+                                a(href=previoLocalHost + '/pages/web/disenio-medida.html')
+                                    | Diseño a medida
+                    li
+                        a(href= previoLocalHost + '/pages/mantenimiento/mantenimiento.html')
+                            div.espacio-icono
+                                i.fal.fa-bullhorn
+                            | Mantenimiento
+
+                    li#marketing
+                        span
+                            div.espacio-icono
+                                i.fal.fa-shopping-cart
+                            | Marketing
+                            i.far.fa-chevron-down#flechitaMarketing
+                        ul.submenu-segundo-nivel#submenu-segundo-nivel-marketing
+                            li
+                                a(href= previoLocalHost + '/pages/marketing/posicionamiento-seo.html')
+                                    |   Posicionamiento SEO
+                            li
+                                a(href= previoLocalHost + '/pages/marketing/trafficker-digital.html')
+                                    | Trafficker digital
+                            li
+                                a(href= previoLocalHost + '/pages/marketing/produccion-audiovisual.html')
+                                    | Producción audiovisual
+                            li
+                                a(href= previoLocalHost + '/pages/marketing/fotografia-producto.html')
+                                    | Fotografía de producto
+
+                    li
+                        a(href= previoLocalHost + '/pages/blog/blog.html')
+                            div.espacio-icono
+                                i.fal.fa-rss
+                            | Blog
+                    li
+                        a(href= previoLocalHost + '/pages/contacto/contacto.html')
+                            div.espacio-icono
+                                i.fal.fa-archive
+                            | Contacto
+                    li
+                        a(href= previoLocalHost + '/pages/area-cliente/area-cliente.html')
+                            div.espacio-icono
+                                i.fal.fa-user-tie
+                            | Area de cliente
+
+
+        article.hablamos#hablamos
+            a#linkHablamos(href= previoLocalHost + '/pages/contacto/contacto.html') ¿Hablamos?
+            a#enlace-icono-hablamos(href="tel:637744494")
+                i#iconoHablamos.fa.fa-phone

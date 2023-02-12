@@ -1,0 +1,282 @@
+.nos_cuentas_tu_idea {
+
+  padding: 5rem 0 3rem;
+  background-image: linear-gradient(to top, rgba(245, 246, 252, 0.85) 100%, white 90%), url("../img/02_bloques/cuentanos/cuentanos.jpg");
+  background-attachment: inherit;
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  @include media-querie-tablet {
+    padding-bottom: 3rem;
+  }
+
+  @include media-querie-desktop {
+    padding-bottom: 5rem;
+  }
+
+
+  .contenedor-principal {
+
+    @include media-querie-tablet {
+      width: 90%;
+    }
+
+    @include media-querie-desktop {
+      width: 80%;
+    }
+
+    .prologo {
+      margin: 0 0 3rem 0;
+      font-family: $fuente_principal-bold;
+      text-align: center;
+      text-transform: uppercase;
+      font-size: var(--h1-font-size);
+
+
+      @include media-querie-tablet {
+        padding: 1rem 0 1rem;
+        font-size: 2rem;
+      }
+
+      @include media-querie-desktop {
+        padding: 1rem 0 2rem;
+        font-size: 2.5rem;
+      }
+    }
+
+    .textos-idea {
+      text-align: center;
+
+
+      p {
+
+        @include media-querie-desktop {
+          font-size: 1.2rem;
+        }
+      }
+    }
+
+    .formulario {
+      margin-top: 3rem;
+
+      label {
+        margin: 0;
+        padding: 0;
+      }
+
+      input {
+        width: 100%;
+        padding: .5rem 1rem;
+        border-radius: 3px;
+        outline: none;
+        border: 1px $gris-suave-placeholder solid;
+        color: $negro;
+        background-color: rgba(255, 255, 255, .5);
+        margin-bottom: 1rem;
+        transition: border .5s;
+
+        &::placeholder {
+          color: $gris-suave-placeholder;
+        }
+
+        &:focus {
+          border: 1px $negro-suave solid;
+        }
+
+        &:hover {
+          border: 1px $negro-suave solid;
+        }
+
+        @include media-querie-desktop {
+          padding: 1rem;
+        }
+      }
+
+      .nombre-apellidos {
+        display: flex;
+        flex-flow: column;
+
+        @include media-querie-tablet {
+          flex-flow: row;
+          justify-content: space-between;
+
+          label {
+            width: calc(50% - .5rem);
+          }
+        }
+      }
+
+      .telefono-email {
+        display: flex;
+        flex-flow: column;
+
+        @include media-querie-tablet {
+          flex-flow: row;
+          justify-content: space-between;
+
+          label {
+            width: calc(50% - .5rem);
+          }
+        }
+      }
+
+      .form-text-area{
+
+        label {
+          width: 100%;
+        }
+
+        textarea {
+          width: 100%;
+          height: 200px;
+          padding: .5rem 1rem;
+          border-radius: 3px;
+          outline: none;
+          border: 1px $gris-suave-placeholder solid;
+          background-color: rgba(255, 255, 255, .5);
+          resize: none;
+          transition: border .5s;
+          white-space: pre-line;
+
+          &::placeholder {
+            color: $gris-suave-placeholder;
+          }
+
+          &:focus {
+            border: 1px $negro-suave solid;
+          }
+
+          &:hover {
+            border: 1px $negro-suave solid;
+          }
+        }
+      }
+
+
+
+
+      .privacidad {
+
+        margin-top: .5rem;
+
+        input {
+          display: inline-block;
+          vertical-align: middle;
+          width: initial;
+          margin: 0;
+
+        }
+
+        label {
+          display: initial;
+          font-size: var(--small-font-size);
+          margin-left: .3rem;
+
+          @include media-querie-tablet {
+            font-size: var(--body-font-size);
+          }
+
+          a {
+            color: $color-logo-2;
+            transition: all .3s;
+
+            &:hover {
+              color: white;
+            }
+          }
+        }
+      }
+
+      .boton-idea {
+        text-align: center;
+        margin: 3rem 0;
+
+        .link-boton {
+          @extend %boton-fondo-naranja-extender;
+          background-color: $color-logo-2;
+          width: 100%;
+
+
+
+          @include media-querie-desktop{
+            padding: 1rem 3.5rem;
+            width: initial;
+          }
+
+
+          &:hover {
+            @extend %boton-fondo-naranja-extender-hover;
+          }
+        }
+
+        @include media-querie-tablet {
+          text-align: right;
+          margin-top: 1rem;
+        }
+      }
+    }
+    .texto-telefono-email{
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: center;
+
+
+      @include media-querie-tablet{
+        flex-flow: row;
+        justify-content: center;
+      }
+
+
+      .whatsapp{
+        flex: 1;
+        margin: .5rem 0;
+
+
+        @include media-querie-tablet{
+          margin-right:1rem;
+        }
+
+        p{
+          font-family: "Montserrat-Bold", sans-serif, serif;
+          margin: 0;
+        }
+      }
+
+      .email{
+        flex: 1;
+        margin:0;
+        //text-align: right;
+
+        @include media-querie-tablet{
+          margin-left:1rem;
+        }
+
+        p{
+          font-family: "Montserrat-Bold", sans-serif, serif;
+          margin: .5rem 0;
+        }
+      }
+    }
+  }
+}
+
+// APARTADO DISENIO-WEB, WEB-EMPRESA
+
+.disenio-web,
+.web-empresa,
+.tiendas-online,
+.disenio-medida{
+
+  .nos_cuentas_tu_idea {
+
+    .link-boton {
+      @extend %boton-fondo-naranja-extender;
+      background-color: $color-primario-seccion-web !important;
+    }
+  }
+
+  .enlace-privacidad{
+    color: $color-primario-seccion-web !important;
+  }
+}

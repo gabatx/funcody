@@ -1,0 +1,1 @@
+<?phpsession_start();$_SESSION['sessionUsuarioLogin'] = $_POST["reciboUsuario"];$_SESSION['sessionPassLogin'] = $_POST["reciboPassLogin"];session_destroy();

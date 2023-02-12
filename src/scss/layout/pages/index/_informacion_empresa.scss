@@ -1,0 +1,109 @@
+.bloque_informacion_empresa{
+  padding: 3rem 0 5rem;
+  background-color: $gris-claro-intermedio;
+
+  .contenedor-principal {
+
+    section.contenedor-rotulo-servicios {
+      text-align: center;
+      margin-bottom: 2rem;
+
+      p.enunciado-seo {
+        display: inline-block;
+        font-size: var(--small-font-size) !important;
+        background-color: white;
+        color: $color-logo-2;
+        text-align: center;
+        border-radius: 25px;
+        text-transform: uppercase;
+        padding: .1rem 1rem;
+        margin-bottom: 2rem;
+
+
+        @include media-querie-mobile_small {
+          font-size: var(--small-font-size);
+        }
+
+        @include media-querie-tablet{
+          box-shadow: 0 1px 5px $gris-borde;
+        }
+
+        @include media-querie-desktop {
+          font-size: initial;
+        }
+      }
+
+      .prologo {
+        padding: 1rem;
+        font-family: $fuente_principal-extralight;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: var(--h2-font-size);
+
+        @include media-querie-tablet {
+          font-size: var(--h1-font-size);
+        }
+      }
+    }
+
+
+
+
+
+    section.caracteristicas-informacion-empresa{
+      margin-bottom: 3rem;
+
+      .info-empresa {
+        display: flex;
+        flex-flow: column wrap;
+        padding: 1rem 1rem;
+
+        p{
+          text-align: center;
+
+          @include media-querie-mobile_small {
+            text-align: initial;
+
+          }
+        }
+
+
+
+
+
+        @include media-querie-tablet {
+          flex-flow: row nowrap;
+          align-items: center;
+        }
+
+
+        .info-empresa-texto {
+          margin: 1rem 0;
+
+
+          @include media-querie-tablet
+          {
+            order: 1;
+            padding-left: 3rem;
+            margin: 0;
+          }
+        }
+
+        i {
+          color: $color-logo-2;
+          font-size: var(--iconos-font-size);
+          align-self: center;
+        }
+      }
+    }
+
+
+
+    section.boton {
+      text-align: center;
+
+      @include boton-fondo-naranja;
+    }
+  }
+}
+

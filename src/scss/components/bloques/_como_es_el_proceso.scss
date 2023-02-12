@@ -1,0 +1,182 @@
+.bloque_como_es_el_proceso {
+  padding: 3rem 0 3rem;
+  background: $gris-claro-intermedio;
+
+  @include media-querie-desktop {
+    padding: 3rem 0;
+  }
+
+  .contenedor-principal {
+
+    @include media-querie-tablet {
+      width: 90%;
+    }
+
+    @include media-querie-desktop {
+      width: 80%;
+    }
+
+    .prologo {
+      margin-bottom: 2rem;
+      font-family: $fuente_principal_bold;
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 1.2rem;
+
+      @include media-querie-mobile_small{
+        font-size: var(--h2-font-size);
+      }
+
+      @include media-querie-tablet {
+        margin: initial;
+        font-family: $fuente_principal_extralight;
+        font-weight: 300;
+        font-size: var(--h1-font-size);
+        padding: 1rem 0 1rem;
+      }
+
+      @include media-querie-desktop {
+        font-size: var(--h1-font-size);
+        margin: 1rem 0;
+      }
+    }
+
+    .procesos {
+      display: flex;
+      flex-flow: column nowrap;
+      margin-top: 1rem;
+
+
+      @include media-querie-tablet {
+        flex-flow: row nowrap;
+        justify-content: space-between;
+      }
+
+
+
+      .proceso {
+        display: flex;
+        flex-flow: column nowrap;
+        margin-bottom: 2rem;
+
+        @include media-querie-tablet{
+          margin-bottom: initial;
+          flex: 0 1 calc(calc(100% / 3) - 1rem);
+        }
+
+
+        .numero-fase {
+          display: flex;
+          flex-flow: row nowrap;
+          align-items: center;
+          justify-content: center;
+
+
+          @include media-querie-tablet {
+            justify-content: center;
+            flex-flow: column nowrap;
+            order: 2;
+          }
+
+          @include media-querie-desktop {
+            flex-flow: row nowrap;
+          }
+
+          .numero {
+            font-size: var(--h2-font-size);
+            font-family: $fuente_principal_bold;
+            color: $gris-borde;
+            line-height: initial;
+
+            @include media-querie-mobile_small{
+              font-size: var(--h1-font-size);
+            }
+
+            @include media-querie-tablet{
+              margin-bottom: 1rem;
+
+            }
+
+            @include media-querie-desktop{
+              margin-bottom: initial;
+              font-size: var(--h1-font-size);
+            }
+          }
+
+          .fase {
+            font-size: var(--h3-font-size);
+            font-family: $fuente_principal_extralight;
+            text-transform: uppercase;
+            color: $negro;
+            margin-left: .5rem;
+
+            @include media-querie-mobile_small{
+              font-size: var(--h2-font-size);
+              margin-left: 1rem;
+            }
+
+
+            @include media-querie-tablet {
+              margin-bottom: 0;
+              margin-left: initial;
+              font-size: var(--h3-font-size);
+            }
+
+            @include media-querie-desktop {
+              font-size: var(--h2-font-size);
+              margin-left: 1rem;
+            }
+          }
+        }
+
+        .descripcion {
+
+          @include media-querie-tablet {
+            text-align: justify;
+            order: 3;
+          }
+        }
+
+        .imagen {
+          margin-top: 1rem;
+
+          img {
+            border-radius: 5px;
+            width: 100%;
+            box-shadow: 0 1px 10px 1px $negro-suave;
+            margin-bottom: 2rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+// --------------
+// INICIO
+// --------------
+
+.inicio{
+
+  .bloque_como_es_el_proceso {
+    padding: 3rem 0 3rem;
+    background: white;
+  }
+}
+
+
+
+// --------------
+// SECCIÓN WEB
+// --------------
+
+
+// WEB EMPRESA
+
+.web-empresa {
+
+  .bloque_como_es_el_proceso {
+    background-color: $gris-claro;
+  }
+}
+

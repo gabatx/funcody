@@ -1,0 +1,45 @@
+section.nos_cuentas_tu_idea
+    article.contenedor-principal
+        h2.prologo ¿Nos cuentas tu idea?
+        div.textos-idea
+            p Nos encantaría escuchar la idea que tienes en mente para mejorar tu presencia online.
+            p Si lo deseas, puedes ponerte en contacto con nosotros y te asesoramos sin ningún compromiso.
+        form.formulario#formularioContacto(action="javascript:enviarMensaje()" method="post")
+            .nombre-apellidos
+                label(for='idNombre')
+                    input#idNombre(type='text' name='nombre' placeholder='Nombre' required='')
+                label(for='idApellidos')
+                    input#idApellidos(type='text' name='apellidos' placeholder='Apellidos' required='')
+            .telefono-email
+                label(for='idTelefono')
+                    input#idTelefono(type='tel' name='telefono' placeholder='Teléfono' required='')
+                label(for='idEmail')
+                    input#idEmail(type='email' name='email' placeholder='Email' required='')
+            .form-text-area
+                label(for='idMensaje')
+                    textarea#idMensaje(name='mensaje' placeholder='Mensaje' required='')
+
+            .privacidad
+                input#idPrivacidad(type='checkbox' name='privacidad' required='')
+                label(for='idPrivacidad')
+                    | He le&iacute;do y acepto la
+                    a.enlace-privacidad(href=previoLocalHost + '/pages/legal/aviso-legal.html')  política de privacidad.
+            .boton-idea
+                button#idBotonEnviar.link-boton(type="submit") Enviar
+
+        .texto-telefono-email
+            .whatsapp
+                p
+                    | Teléfono:
+                    span  +34 637 744 494
+            .email
+                p
+                    | Email:
+                    span  funcody.contacto@gmail.com
+
+
+
+
+
+
+

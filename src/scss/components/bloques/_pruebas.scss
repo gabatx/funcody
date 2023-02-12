@@ -1,0 +1,1 @@
+.proyecto-fantasma{  padding: 1.5rem 0;  @include media-querie-tablet{    flex: 0 1 calc(calc(100% / 3) - 1rem);  }  a{    display: none;    &:first-child{      display: block;    }  }  img{    border-radius: $border-radius;    box-shadow: 0 1px 10px 1px $negro-suave;  }}

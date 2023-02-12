@@ -1,0 +1,184 @@
+.bloque_algunos_de_nuestros_proyectos {
+  padding: 2.5rem 0;
+
+
+  @include media-querie-desktop {
+    padding: 3rem 0 5rem;
+  }
+
+  div.contenedor-rotulo-servicios {
+    text-align: center;
+    margin-bottom: 2rem;
+
+
+    p {
+      display: inline-block;
+      font-size: var(--small-font-size) !important;
+      background-color: white;
+      color: $color-primario-seccion-marketing;
+      text-align: center;
+      border-radius: 25px;
+      text-transform: uppercase;
+      padding: .1rem 1rem;
+      box-shadow: 0 1px 5px $gris-borde;
+
+      @include media-querie-mobile_small {
+        font-size: var(--small-font-size)  !important;
+      }
+
+      @include media-querie-desktop {
+        font-size: initial  !important;
+      }
+    }
+  }
+
+  section.textos {
+
+    h2.encabezado-proyectos {
+      font-family: $fuente_principal-extralight;
+      font-weight: 100;
+      margin-bottom: 2rem;
+      text-align: center;
+      text-transform: uppercase;
+      font-size: var(--h3-font-size);
+
+      @include media-querie-mobile_small{
+        font-size: var(--h2-font-size);
+      }
+
+      @include media-querie-tablet {
+        font-family: $fuente_principal-extralight;
+        font-size: var(--h1-font-size);
+        margin-bottom: 3rem;
+      }
+    }
+  }
+
+  .contenedor-proyectos {
+
+    @include media-querie-desktop {
+      max-width: 100%;
+    }
+
+    @include media-querie-desktop-k{
+      max-width: 70%;
+    }
+  }
+
+  .proyectos {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    transition: all .3s ease-in-out;
+
+    @include media-querie-tablet {
+      justify-content: space-between;
+    }
+
+    /*&:hover{
+      filter: grayscale(100%);
+      transition: all .3s;
+    }*/
+
+    .proyecto {
+      margin-bottom: 2rem;
+      border-radius: $border-radius;
+      transition: all .3s ease-in-out;
+      box-shadow: $box-shadow-suave;
+      text-align: center;
+
+
+      &:hover {
+        box-shadow: $box-shadow-intermedio;
+      }
+
+
+      @include media-querie-tablet {
+        flex: 0 1 calc(calc(100% / 2) - 1rem);
+      }
+
+      @include media-querie-desktop {
+        flex: 0 1 calc(calc(100% / 5) - 1rem);
+      }
+
+      a {
+        display: none;
+
+        // Estaba en block pero lo he cambiado a flex para centralo verticalmente
+        &:first-child {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        img {
+          border-radius: $border-radius;
+          transition: transform .3s, filter .3s ease-in-out;
+        }
+      }
+    }
+  }
+
+  .img-contenedor {
+    overflow: hidden;
+  }
+
+  /* Colorize-zoom Container */
+  .img-blanco-negro-encoge img {
+
+    filter: brightness(70%)  grayscale(100%);
+    transition: transform .3s, filter .3s ease-in-out;
+
+  }
+
+  /* The Transformation */
+  .img-color-agranda-hover img {
+    filter: brightness(100%);
+    //transform: scale(1.03);
+    transition: transform .3s, filter .3s ease-in-out;
+  }
+
+}
+
+// --------------
+// SECCIÓN INICIO
+// --------------
+
+.inicio{
+
+  div.contenedor-rotulo-servicios {
+
+    p {
+      color: $color-logo-2;
+    }
+  }
+}
+
+
+
+// --------------------
+// SECCIÓN DISENIO-WEB
+// --------------------
+
+
+.disenio-web,
+.web-empresa,
+.tiendas-online,
+.disenio-medida{
+
+  div.contenedor-rotulo-servicios {
+
+    p {
+      color: $color-primario-seccion-web;
+    }
+  }
+}
+
+/*.disenio-web {
+
+  .bloque_algunos_de_nuestros_proyectos {
+    background-color: $gris-claro-intermedio;
+  }
+}*/

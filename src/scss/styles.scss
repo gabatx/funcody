@@ -1,0 +1,59 @@
+@import "config/mixins";
+@import "config/variables";
+@import "config/fonts";
+
+@import "base/base";
+@import "layout/layout";
+
+@import "components/cabecera";
+@import "components/aside";
+@import "components/footer";
+@import "components/transiciones";
+
+@import "components/bloques/como_es_el_proceso";
+@import "components/bloques/algunos_de_nuestros_proyectos";
+@import "components/bloques/nuestra_caja_de_herramientas";
+@import "components/bloques/nos_cuentas_tu_idea";
+@import "components/bloques/bloque_uno_disenio_imagen_escritorio";
+@import "components/bloques/textos_aviso_legal_politica_privacidad";
+@import "components/bloques/pruebas";
+@import "components/bloques/bloque-uno-generico";
+@import "components/bloques/dejanos-tu-telefono";
+@import "components/bloques/dejanos-tu-telefono";
+@import "components/bloques/preguntas-frecuentes_generico";
+@import "components/bloques/comentarios-clientes";
+
+@import "layout/pages/index/desarrollo_web_comienzo";
+@import "layout/pages/index/informacion_empresa";
+@import "layout/pages/index/que_hacemos_por_ti";
+@import "layout/pages/legal/aviso-legal-politica-privacidad";
+@import "layout/pages/web/disenio-web/que_tipo_web_necesitas";
+@import "layout/pages/web/tiendas-online/caracteristicas-tienda";
+@import "layout/pages/web/disenio-medida/como_saber_disenio_medida";
+@import "layout/pages/web/disenio-medida/desarrollo-web-originales";
+@import "layout/pages/web/disenio-medida/paginas-webs-profesionales";
+@import "layout/pages/mantenimiento/soporte-online-que-incluimos";
+@import "layout/pages/mantenimiento/preguntas-frecuentes-mantenimiento";
+@import "layout/pages/marketing/posicionamiento-seo/como-posicionamos-seo";
+@import "layout/pages/marketing/posicionamiento-seo/seo-negocio";
+@import "layout/pages/marketing/trafficker-digital/tipos-trafficker";
+@import "layout/pages/marketing/trafficker-digital/funciones_trafficker";
+@import "layout/pages/marketing/produccion-audiovisual/proceso-audiovisual";
+@import "layout/pages/marketing/produccion-audiovisual/video-corporativo-promocional";
+@import "layout/pages/marketing/produccion-audiovisual/facilita-clientes";
+@import "layout/pages/marketing/produccion-audiovisual/ventajas-creacion-contenidos";
+@import "layout/pages/marketing/fotografia-producto/beneficios-fotografia";
+@import "layout/pages/marketing/fotografia-producto/procesoFotografiaProducto";
+@import "layout/pages/marketing/fotografia-producto/portafolio-fotografia";
+@import "layout/pages/blog/articulos";
+@import "layout/pages/contacto/formulario-contacto";
+@import "layout/pages/area-cliente/formulario-acceso";
+@import "layout/pages/404/404";
+
+@import "layout/pages/blog/entradas/bloque-generico-entrada";
+
+@import "theme/theme";
+
+
+
+

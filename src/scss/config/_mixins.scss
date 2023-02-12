@@ -1,0 +1,130 @@
+@mixin box-sizing($box-model) {
+  box-sizing: $box-model;
+}
+
+// MEDIA QUERIES
+
+@mixin media-querie-mobile_small {
+  @media only screen and (min-width: #{$mobile_small}) {
+    @content;
+  }
+}
+
+@mixin media-querie-mobile {
+  @media only screen and (min-width: #{$mobile}) {
+    @content;
+  }
+}
+
+@mixin media-querie-tablet {
+  @media only screen and (min-width: #{$tablet}) {
+    @content;
+  }
+}
+
+@mixin media-querie-desktop {
+  @media only screen and (min-width: #{$desktop}) {
+    @content;
+  }
+}
+
+
+@mixin media-querie-desktop-f {
+  @media only screen and (min-width: #{$desktop-f}) {
+    @content;
+  }
+}
+
+@mixin media-querie-desktop-k {
+  @media only screen and (min-width: #{$desktop-k}) {
+    @content;
+  }
+}
+
+@mixin media-querie-oriention-lanscape {
+  @media screen and (orientation: landscape) {
+    @content;
+  }
+}
+
+@mixin media-querie-oriention-lanscape-mobile-small {
+
+  @media only screen
+  and (min-device-width: 275px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+    @content;
+  }
+}
+
+@mixin media-querie-oriention-lanscape-mobile {
+  @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
+    @content;
+  }
+}
+
+@mixin media-querie-oriention-lanscape-tablet {
+
+  /* Landscape */
+  @media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (orientation: landscape)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    @content;
+  }
+}
+
+
+
+// BOTONES
+
+@mixin boton-fondo-naranja {
+  .link-boton {
+    text-transform: uppercase;
+    color: white;
+    padding: 1rem 1.5rem;
+    background-color: $color-logo-2;
+    border-radius: $border-radius;
+    border: 1px transparent solid;
+    text-decoration: none;
+    transition: all .2s;
+
+    &:hover {
+      background-color: white;
+      color: $color-logo-2;
+      border: 1px $color-logo-2 solid;
+    }
+  }
+}
+
+%boton-fondo-naranja-extender {
+  text-transform: uppercase;
+  color: white;
+  padding: 1rem 1.5rem;
+  border: 1px transparent solid;
+  text-decoration: none;
+  transition: all .2s;
+  border-radius: 5px;
+}
+
+%boton-fondo-naranja-extender-hover {
+  box-shadow: 0 1px 10px 1px #696969;
+}
+
+
+// ########### EDTEAM ###########
+
+
+@mixin from($bp) {
+  @if map-has-key($breakpoints, $bp) {
+    @media screen and (min-width: map_get($breakpoints, $bp)) {
+      @content;
+    }
+  } @else {
+    @media screen and (min-width: $bp) {
+      @content;
+    }
+  }
+}

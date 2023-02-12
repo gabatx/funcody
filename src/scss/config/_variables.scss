@@ -1,0 +1,126 @@
+// Variables
+$borde-generico: 1px solid rgba(162, 162, 162, 0.28);
+
+// Fuentes
+$fuente_principal: 'Montserrat-Regular', sans-serif, serif;
+$fuente_principal_bold: 'Montserrat-Bold', sans-serif, serif;
+$fuente_principal_extralight: 'Montserrat-ExtraLight', sans-serif, serif;
+$fuente_secundaria: Swenson, sans-serif, serif;
+
+// Colores
+
+$color-logo-1: #998667;
+$color-logo-2: #f38a55;
+$color-logo-2-hover: #f1f3f0;
+
+
+$color-1: #35b1c1;
+$color-2: #98d0d9;
+$color-3: #b0a69d;
+$color-4: #9e7a62;
+$color-5:#6d3c1c;
+$color-6: #828851;
+
+$marron-oscuro: #594E3C;
+$negro: #525252;
+$negro-suave: #696969;
+$gris-suave-placeholder: #ababab;
+$gris-borde: rgba(217, 217, 217, 0.75);
+$gris-claro:#F9F8F8;
+$gris-claro-intermedio: #f4f3f3;
+$gris-claro-transicion-cabecera-paginas: #ebebeb;
+$gris-footer:#969696;
+$gris-fondo-escritorio: #d5d5d5;
+$verde-correcto: #2bac2b;
+$color-bocadillo: white;
+
+
+// box-hadow
+
+$box-shadow-suave: 0 5px 10px #cecece;
+$box-shadow-intermedio: 0 5px 20px #a2a2a2;
+$box-shadow-recio: 0 5px 10px #898989;
+
+// colores cabecera
+
+$color-primario-seccion-web: #49a4f2;
+$color-primario-seccion-mantenimiento: #a38642;
+$color-primario-seccion-contacto: #94c424;
+$color-primario-seccion-marketing: #50c9b0;
+$color-primario-seccion-404: #de7e85;
+$color-primario-seccion-blog: #30BF64;
+
+
+$color: red;
+$posicion:1;
+
+// Tamaños de texto
+
+$texto-h1: 2rem;
+$texto-h2: 1.5rem;
+$texto-normal: 1rem;
+$texto-pequenio: .5rem;
+
+
+// Border radius
+
+$border-radius: 5px;
+
+// Variables para los tamaños de Media Queries
+//$mobile_small:360px;
+$mobile_small:375px;
+$mobile:520px;
+$tablet: 768px;
+$desktop: 1285px;
+$desktop-f: 1650px;
+$desktop-k: 2200px;
+
+
+// ########### EDTEAM ###########
+
+
+$breakpoints : (
+        l: 960px
+);
+
+$max-width: 100%;
+
+// Paleta de colores:
+:root {
+  --color-first  : #007BDF;
+  --color-border : #DFE0E0;
+  --color-alert  : #FF3C32;
+}
+
+// Variables de apilamiento (z-index)
+:root {
+  --z-back    : -10;
+  --z-normal  : 1;
+  --z-tooltip : 10;
+  --z-fixed   : 100;
+  --z-modal   : 1000;
+}
+
+// Variables de tipografía
+
+:root {
+  --extra-font-size : 3.5rem;
+  --extra-medium-font-size : 2.8rem;
+  --h1-font-size    : 2rem;
+  --h2-font-size    : 1.5rem;
+  --h3-font-size    : 1.25rem;
+  --body-font-size  : .9rem;
+  --small-font-size : .75rem;
+  --iconos-font-size: 3rem;
+
+  @include from(l) {
+    --extra-font-size : 4rem;
+    --extra-medium-font-size : 3.5rem;
+    --h1-font-size    : 2.5rem;
+    --h2-font-size    : 1.75rem;
+    --h3-font-size    : 1.5rem;
+    --body-font-size  : 1rem;
+    --small-font-size : .8rem;
+    --iconos-font-size: 3.5rem;
+  }
+}
